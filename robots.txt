@@ -7,10 +7,4 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
-User-agent: Yeti
-Allow: /
-
-User-agent: OAI-SearchBot
-Allow: /
-
-Sitemap: https://t3b08-yc-room-real2.pages.dev/sitemap.xml
+Sitemap: https://yeomchang-review-trend.hardcoreroom.com/sitemap.xml

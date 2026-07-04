@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="bpaas-design-system" content="editorial-apple">
+    <meta name="bpaas-design-theme" content="kr-warm-grid">
+    <meta name="description" content="염창 룸싸롱 찐후기 블로그. 진짜 고수만 아는 염창 룸싸롱의 모든 것, 현장감 100% 리얼 경험담 대공개. 010-6279-0862">
+    <meta name="keywords" content="염창 룸싸롱, 염창 룸싸롱 찐후기, 염창 룸싸롱 블로그, 염창 술집 추천, 염창 유흥 정보, 강서구 룸싸롱">
+    <meta property="og:title" content="염창 룸싸롱 찐후기 블로그 | 고수들의 리얼토크">
+    <meta property="og:description" content="염창 룸싸롱 찐후기 블로그. 진짜 고수만 아는 염창 룸싸롱의 모든 것, 현장감 100% 리얼 경험담 대공개.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://t3b08-yc-room-real2.vercel.app">
+    <title>염창 룸싸롱 찐후기 블로그 | 리얼 고수들의 이야기</title>
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #faf6f1;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        header {
+            background: #1a1a1a;
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #e8d5b7;
+            letter-spacing: -0.5px;
+        }
+        .logo span {
+            color: #c9a96e;
+        }
+        .nav-menu {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+        .nav-menu a {
+            color: #e8d5b7;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        .nav-menu a:hover {
+            color: #c9a96e;
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 8px;
+        }
+        .hamburger span {
+            width: 28px;
+            height: 3px;
+            background: #e8d5b7;
+            border-radius: 2px;
+        }
+        .phone-link-top {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #c9a96e;
+            color: #1a1a1a;
+            padding: 10px 22px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        .phone-link-top:hover {
+            background: transparent;
+            color: #c9a96e;
+            border-color: #c9a96e;
+        }
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #1a1a1a;
+                flex-direction: column;
+                padding: 24px;
+                gap: 16px;
+                border-top: 1px solid #2a2a2a;
+            }
+            .nav-menu.active {
+                display: flex;
+            }
+            .phone-link-top {
+                padding: 8px 16px;
+                font-size: 0.85rem;
+            }
+        }
+        .blog-section {
+            padding: 80px 0 60px;
+        }
+        .blog-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .blog-header h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+        .blog-header h1 span {
+            color: #c9a96e;
+        }
+        .blog-header p {
+            font-size: 1.15rem;
+            color: #555;
+            max-width: 680px;
+            margin: 0 auto;
+        }
+        .blog-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 48px 40px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+            margin-bottom: 40px;
+            border-left: 6px solid #c9a96e;
+        }
+        .blog-card .tag {
+            display: inline-block;
+            background: #c9a96e;
+            color: #1a1a1a;
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 4px 14px;
+            border-radius: 50px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .blog-card h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.3;
+            color: #1a1a1a;
+        }
+        .blog-card h2::before {
+            content: "🔥 ";
+        }
+        .blog-card .meta {
+            display: flex;
+            gap: 20px;
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 24px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 16px;
+        }
+        .blog-card .content {
+            font-size: 1.05rem;
+            color: #333;
+            line-height: 1.8;
+        }
+        .blog-card .content p {
+            margin-bottom: 20px;
+        }
+        .blog-card .content strong {
+            color: #1a1a1a;
+        }
+        .blog-card .highlight-box {
+            background: #f8f4ee;
+            border-radius: 12px;
+            padding: 24px 28px;
+            margin: 28px 0;
+            border-left: 4px solid #c9a96e;
+        }
+        .blog-card .highlight-box p {
+            margin-bottom: 0;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+        .blog-card .cta-inline {
+            display: inline-block;
+            background: #1a1a1a;
+            color: #e8d5b7;
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            margin-top: 16px;
+            transition: all 0.3s;
+            border: 2px solid #1a1a1a;
+        }
+        .blog-card .cta-inline:hover {
+            background: transparent;
+            color: #1a1a1a;
+        }
+        .blog-card .cta-phone {
+            display: inline-block;
+            background: #c9a96e;
+            color: #1a1a1a;
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            margin-top: 16px;
+            transition: all 0.3s;
+            border: 2px solid #c9a96e;
+            margin-left: 12px;
+        }
+        .blog-card .cta-phone:hover {
+            background: transparent;
+            color: #c9a96e;
+        }
+        .faq-section {
+            padding: 60px 0 80px;
+            background: #fff;
+        }
+        .faq-section h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 48px;
+            color: #1a1a1a;
+        }
+        .faq-item {
+            border-bottom: 1px solid #e8e0d6;
+            padding: 20px 0;
+        }
+        .faq-item summary {
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            color: #1a1a1a;
+        }
+        .faq-item summary::after {
+            content: "+";
+            font-size: 1.5rem;
+            color: #c9a96e;
+            font-weight: 300;
+        }
+        .faq-item[open] summary::after {
+            content: "−";
+        }
+        .faq-item p {
+            padding: 12px 0 8px;
+            color: #555;
+            line-height: 1.7;
+        }
+        footer {
+            background: #1a1a1a;
+            color: #888;
+            text-align: center;
+            padding: 40px 24px;
+            font-size: 0.9rem;
+        }
+        footer a {
+            color: #c9a96e;
+            text-decoration: none;
+        }
+    </style>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <div class="logo">염창<span>찐후기</span></div>
+            <nav class="nav-menu" id="navMenu">
+                <a href="/">홈</a>
+                <a href="/blog">블로그</a>
+                <a href="/review">후기</a>
+                <a href="/contact">문의</a>
+                <a href="tel:010-6279-0862" class="phone-link-top">📞 010-6279-0862</a>
+            </nav>
+            <button class="hamburger" id="hamburgerBtn" aria-label="메뉴 열기">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <section class="blog-section">
+        <div class="container">
+            <div class="blog-header">
+                <h1>염창 룸싸롱 <span>찐후기</span> 블로그</h1>
+                <p>진짜 고수들만 아는 염창 룸싸롱의 모든 것. 가짜 후기 걸러내고, 현장감 100% 리얼 경험담만 공개한다.</p>
+            </div>
+
+            <div class="blog-card">
+                <span class="tag">🔥 찐후기 시리즈</span>
+                <h2>염창 룸싸롱, 진짜 고수들은 여기만 간다</h2>
+                <div class="meta">
+                    <span>✍️ by 찐고수</span>
+                    <span>📅 2024.03.15</span>
+                    <span>👁️ 12.8k views</span>
+                </div>
+                <div class="content">
+                    <p>솔직히 말해라. 네이버에 "염창 룸싸롱" 검색하고 블로그 후기 보면서 고민하는 거지? 99%는 광고야. 업주가 쓴 글이거나, 알바가 재탕한 카피. <strong>근데 나는 다녀본 놈이다.</strong></p>
+                    <p>염창에서 룸싸롱 10군데 넘게 돌아본 입장으로 말한다. 분위기, 마인드, 서비스, 가격까지 4박자 다 맞는 곳은 <strong>딱 두 군데</strong>뿐이다. 나머지는 돈 아까운 짓이다.</p>
+                    
+                    <div class="highlight-box">
+                        <p>💥 내가 직접 발로 뛰고, 직접 술 깨고, 직접 쓴 후기다. 광고비 한 푼 안 받았다. 그냥 형들 헛돈 쓰지 말라고 올린다.</p>
+                    </div>
+                    
+                    <p><strong>1. 분위기</strong> — 가짜 고급스러움은 걸러라. 진짜는 조명 하나, 소파 하나, 심지어 잔 하나까지 신경 썼다. 입구 들어섰을 때 '아, 여기다' 싶은 곳이 정답이다.</p>
+                    <p><strong>2. 마인드</strong> — 아가씨들 표정에 다 드러난다. 억지로 웃는 곳은 30분도 버티기 힘들다. 진짜 즐기는 분위기, 자연스러운 스킨십, 웃음이 터져 나오는 곳이 명당이다.</p>
+                    <p><strong>3. 서비스 vs 가격</strong> — 30만원 내고 20만원짜리 서비스 받는 곳이 태반이다. 반면에 25만원 내고 40만원짜리 서비스 받는 곳도 있다. <strong>내가 예약하는 곳은 후자다.</strong></p>
+                    
+                    <p>결론 하나만 던진다. <strong>염창 룸싸롱 찐후기</strong> 원한다면, 가짜 광고에 낚이지 말고 직접 검증된 곳으로 가라. 나처럼 여러 군데 돌아볼 자신 없으면, 그냥 전화해라. 내가 추천하는 곳으로 연결해준다.</p>
+                    
+                    <a href="tel:010-6279-0862" class="cta-inline">📞 전화 걸기</a>
+                    <a href="/review" class="cta-phone">📋 더 많은 후기 보기</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="container">
+            <h2>염창 룸싸롱 찐후기 FAQ</h2>
+            <div class="faq-item">
+                <details>
+                    <summary>염창 룸싸롱 찐후기 진짜 믿을 수 있어?</summary>
+                    <p>내 블로그 후기는 광고비 안 받았다. 내가 직접 여러 군데 돌아다니고, 돈 내고 마시고, 경험한 내용만 적었다. 가짜 후기랑 비교하지 마라. 현장감이 다르다.</p>
+                </details>
+            </div>
+            <div class="faq-item">
+                <details>
+                    <summary>처음 가는 사람한테 추천하는 곳은?</summary>
+                    <p>처음이면 무조건 전화해라. 010-6279-0862로 바로 연결된다. 분위기, 가격대, 목적에 따라 맞춤으로 알려준다. 초보는 혼자 검색하다가 낚이지 말고, 바로 전화가 답이다.</p>
+                </details>
+            </div>
+            <div class="faq-item">
+                <details>
+                    <summary>가격대는 어떻게 돼? 너무 비싸면 부담인데</summary>
+                    <p>20만원대 후반부터 40만원대까지 다양하다. 근데 중요한 건 가격이 아니라 가성비다. 30만원 내고도 50만원짜리 서비스 받는 곳이 있는 반면, 40만원 내고 20만원짜리 서비스 받는 곳도 있다. 내 후기에서는 진짜 가성비 좋은 곳만 추려서 소개한다.</p>
+                </details>
+            </div>
+            <div class="faq-item">
+                <details>
+                    <summary>예약은 어떻게 해야 해?</summary>
+                    <p>전화 한 통이면 끝이다. 010-6279-0862로 바로 연결되고, 원하는 시간대와 인원, 분위기까지 상담해준다. 당일 예약도 가능하지만, 주말에는 최소 2~3시간 전에 연락하는 게 좋다.</p>
+                </details>
+            </div>
+            <div class="faq-item">
+                <details>
+                    <summary>염창 룸싸롱 중에서
+</body>
+</html>
